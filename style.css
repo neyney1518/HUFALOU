@@ -1,0 +1,230 @@
+/* ================================================================
+   SCI HUFALOU — Feuille de styles principale
+   ----------------------------------------------------------------
+   (Note : Le header et le footer sont gérés dans _shared.css)
+================================================================ */
+
+/* ── 1. RESET & VARIABLES ─────────────────────────────────── */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --noir:        #0B0F16;
+  --blanc:       #FAF9F5;
+  --anthracite:  #24262A;
+  --anthracite-2:#4A4D52;
+  --ligne:       rgba(36,38,42,.12);
+  --ligne-dark:  rgba(250,249,245,.12);
+
+  --accent:        #122641;              
+  --accent-deep:   #0A1626;              
+  --accent-light:  #57585A;              
+  --accent-soft:   rgba(18,38,65,.12);   
+
+  --bg:          var(--blanc);
+  --bg-alt:      #F2F0EA;
+  --bg-dark:     var(--noir);
+
+  --text:        var(--anthracite);
+  --text-muted:  #6C6F73;
+  --text-light:  rgba(250,249,245,.72);
+  --text-light-muted: rgba(250,249,245,.45);
+
+  --font-display: 'Cormorant Garamond', 'Times New Roman', serif;
+  --font-sans:    'Inter', -apple-system, sans-serif;
+
+  --section-pad: clamp(4.5rem, 9vw, 8.5rem);
+  --max-w: 1180px;
+
+  --ease: cubic-bezier(.22,1,.36,1);
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-sans);
+  font-weight: 300;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  padding-top: 110px; 
+}
+
+body.has-hero {
+  padding-top: 0;
+}
+
+::selection { background: var(--accent-soft); color: var(--noir); }
+
+a { color: inherit; }
+img, svg { display: block; max-width: 100%; }
+
+:focus-visible {
+  outline: 1.5px solid var(--accent);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: .001ms !important; transition-duration: .001ms !important; scroll-behavior: auto !important; }
+}
+
+/* ── 2. TYPOGRAPHIE ───────────────────────────────────────── */
+h1, h2, h3 { font-family: var(--font-display); font-weight: 500; letter-spacing: -.01em; color: var(--text); }
+
+.ledger-ref {
+  font-family: var(--font-sans);
+  font-size: .68rem;
+  letter-spacing: .28em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 1.25rem;
+  display: flex; align-items: center; gap: .85rem;
+}
+.ledger-ref::before { content:''; width: 22px; height: 1px; background: var(--accent); flex-shrink: 0; }
+.section-alt .ledger-ref,
+#hero .ledger-ref { color: var(--accent); }
+
+.section-title {
+  font-size: clamp(2rem, 4vw, 3.1rem);
+  line-height: 1.12;
+  margin-bottom: 1.5rem;
+}
+.section-title em { font-style: italic; color: var(--accent-deep); }
+.section-alt .section-title em,
+#hero .section-title em { color: var(--accent); }
+
+.section-lead {
+  font-size: clamp(.95rem, 1.1vw, 1.05rem);
+  color: var(--text-muted);
+  max-width: 620px;
+  font-weight: 300;
+  line-height: 1.85;
+}
+
+/* ── 3. LAYOUT UTILITAIRES ────────────────────────────────── */
+.section { padding: var(--section-pad) clamp(1.5rem, 5vw, 4rem); }
+.section-alt { background: var(--bg-alt); }
+.max-w { max-width: var(--max-w); margin: 0 auto; }
+
+.reveal { opacity: 0; transform: translateY(22px); }
+.reveal.in-view {
+  opacity: 1; transform: translateY(0);
+  transition: opacity .9s var(--ease), transform .9s var(--ease);
+}
+
+.btn-primary, .btn-outline {
+  font-family: var(--font-sans);
+  font-size: .78rem;
+  font-weight: 500;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background .3s, color .3s, border-color .3s, transform .3s;
+}
+.btn-primary {
+  display: inline-flex; align-items: center; gap: .75rem;
+  background: var(--accent); color: var(--blanc);
+  padding: .95rem 2.1rem; border: 1px solid var(--accent);
+}
+.btn-primary:hover { background: transparent; color: var(--accent); }
+#hero .btn-primary:hover { color: var(--blanc); border-color: var(--blanc); }
+
+.btn-outline {
+  display: inline-flex; align-items: center; gap: .5rem;
+  color: var(--text-light);
+  border-bottom: 1px solid var(--ligne-dark);
+  padding-bottom: 3px;
+}
+.btn-outline:hover { color: var(--accent); border-color: var(--accent); }
+
+/* ── 4. HERO ──────────────────────────────────────────────── */
+#hero {
+  position: relative; min-height: 100svh;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  text-align: center;
+  background: var(--noir); color: var(--blanc);
+  padding: 8rem clamp(1.5rem,5vw,4rem) 5rem;
+  overflow: hidden;
+}
+.hero-vignette {
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse 60% 50% at 50% 30%, rgba(87,88,90,.08), transparent 70%),
+    linear-gradient(180deg, var(--noir) 0%, #131519 100%);
+  pointer-events: none;
+}
+.hero-inner { position: relative; z-index: 1; max-width: 720px; }
+.hero-seal { display: flex; justify-content: center; margin-bottom: 2rem; }
+
+/* ── LOGO CENTRAL PLUS GRAND ── */
+.hero-seal-plate {
+  display: flex; align-items: center; justify-content: center;
+  width: 250px;
+  height: 250px;
+  padding: 0; /* Le logo prend toute la place */
+  background: transparent; /* Fond transparent */
+  border: none; /* Plus de cadre */
+}
+.hero-seal-plate img { width: 100%; height: 100%; object-fit: contain; display: block; }
+
+.hero-title {
+  font-size: clamp(2.6rem, 7vw, 5.2rem);
+  color: var(--blanc); line-height: 1; letter-spacing: .01em;
+  margin-bottom: 1.75rem;
+}
+.hero-title em { font-style: italic; color: var(--accent-light); }
+.hero-subtitle {
+  font-family: var(--font-display); font-style: italic;
+  font-size: clamp(1.15rem, 2vw, 1.55rem);
+  color: rgba(250,249,245,.78); line-height: 1.55; font-weight: 400;
+  margin-bottom: 2.25rem;
+}
+.hero-rule { width: 1px; height: 52px; background: linear-gradient(var(--accent-light), transparent); margin: 0 auto 2.25rem; }
+.hero-actions { display: flex; align-items: center; justify-content: center; gap: 1.75rem; flex-wrap: wrap; }
+
+/* ── 5. PILIERS / ENGAGEMENTS ─────────────────────────────── */
+.pillars-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px;
+  background: var(--ligne); margin-top: clamp(2.5rem,5vw,4rem);
+  border-top: 1px solid var(--ligne);
+}
+.pillar { background: var(--bg-alt); padding: 2.5rem 2rem 2.75rem; position: relative; }
+.pillar::before { content:''; position: absolute; top:0; left:0; width: 0; height: 2px; background: var(--accent); transition: width .5s var(--ease); }
+.pillar:hover::before { width: 100%; }
+.pillar-num { font-size: .66rem; letter-spacing: .2em; text-transform: uppercase; color: var(--accent); margin-bottom: 1.5rem; }
+.pillar-title { font-size: 1.5rem; margin-bottom: .85rem; }
+.pillar-text { font-size: .88rem; color: var(--text-muted); line-height: 1.85; }
+
+.engagements-list {
+  list-style: none; margin-top: clamp(2.5rem,5vw,4rem);
+  display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem 3rem;
+}
+.engagements-list li { display: flex; gap: 1.1rem; align-items: flex-start; }
+.eng-seal {
+  flex-shrink: 0; width: 34px; height: 34px; border-radius: 50%;
+  border: 1px solid var(--accent); color: var(--accent);
+  display: flex; align-items: center; justify-content: center;
+}
+.engagements-list h3 { font-size: 1.1rem; margin-bottom: .4rem; }
+.engagements-list p { font-size: .85rem; color: var(--text-muted); line-height: 1.75; }
+
+/* ── 6. CONTACT ───────────────────────────────────────────── */
+.contact-simple { max-width: 640px; }
+.contact-simple .btn-primary { margin-top: .5rem; }
+
+/* ── 7. PAGES LÉGALES (mentions-légales, confidentialité) ─── */
+.legal-block { margin-top: 2.5rem; }
+.legal-block h2 { font-size: 1.25rem; margin-bottom: .75rem; }
+.legal-block p { font-size: .88rem; color: var(--text-muted); line-height: 1.85; font-weight: 300; }
+.legal-block a { color: var(--accent); }
+
+/* ── 8. RESPONSIVE DU CONTENU ─────────────────────────────── */
+@media (max-width: 900px) {
+  .pillars-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 640px) {
+  .engagements-list { grid-template-columns: 1fr; }
+  body { padding-top: 72px; }
+  body.has-hero { padding-top: 0; }
+}
