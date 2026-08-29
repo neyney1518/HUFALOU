@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dossier de candidature — SCI Hufalou</title>
+<meta name="robots" content="noindex, nofollow">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="_shared.css">
+<link rel="stylesheet" href="candidature.css">
+</head>
+<body>
+
+  <div id="nav-inject"></div>
+
+  <main id="main-content">
+
+    <section class="section doss-intro">
+      <div class="max-w">
+        <div class="ledger-ref">Dossier de candidature</div>
+        <h2 class="section-title">Candidature à <em>la location</em></h2>
+        <p class="section-lead">
+          Merci de l'intérêt que vous portez à ce logement. Afin d'étudier votre candidature avec
+          la même rigueur que nous appliquons à la gestion de notre patrimoine, nous vous remercions
+          de compléter l'ensemble des rubriques ci-dessous. Conformément au décret n°2015-1437, nous
+          ne vous demanderons aucune pièce en dehors de la liste légale — voir Article VII.
+        </p>
+      </div>
+    </section>
+
+    <div class="doss-progress" aria-hidden="true">
+      <div class="doss-progress-inner">
+        <span class="doss-progress-label">Progression</span>
+        <span class="doss-progress-track"><span class="doss-progress-fill" id="progressFill"></span></span>
+        <span class="doss-progress-label" id="progressPct">0%</span>
+      </div>
+    </div>
+
+    <section class="section">
+      <div class="max-w">
+        <form id="candidature-form" action="https://formsubmit.co/hufalou.sci@gmail.com" method="POST" enctype="multipart/form-data">
+
+          <!-- Anti-spam & configuration FormSubmit -->
+          <input type="hidden" name="_subject" value="Nouvelle candidature de location — SCI Hufalou">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_captcha" value="true">
+          <input type="hidden" name="_next" value="https://hufalou.vercel.app/merci.html">
+          <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+
+          <!-- ARTICLE PREMIER — IDENTITÉ -->
+          <article class="doss-article">
+            <div class="doss-article-head">
+              <span class="doss-article-num">Article premier</span>
+              <h3 class="doss-article-title">Identité du candidat</h3>
+            </div>
+
+            <div class="field-grid">
+              <div class="field">
+                <label>Civilité <span class="req">*</span></label>
+                <div class="radio-row">
+                  <label class="radio-pill"><input type="radio" name="civilite" value="Madame" required> Madame</label>
+                  <label class="radio-pill"><input type="radio" name="civilite" value="Monsieur"> Monsieur</label>
+                </div>
+              </div>
+              <div class="field">
+                <label for="dob">Date de naissance <span class="req">*</span></label>
+                <input type="date" id="dob" name="date_naissance" required>
+              </div>
+              <div class="field">
+                <label for="nom">Nom <span class="req">*</span></label>
+                <input type="text" id="nom" name="nom" required>
+              </div>
+              <div class="field">
+                <label for="prenom">Prénom <span class="req">*</span></label>
+                <input type="text" id="prenom" name="prenom" required>
+              </div>
+              <div class="field">
+                <label for="tel">Téléphone <span class="req">*</span></label>
+                <input type="tel" id="tel" name="telephone" required>
+              </div>
+              <div class="field">
+                <label for="email">Email <span class="req">*</span></label>
+                <input type="email" id="email" name="email" required>
+              </div>
+              <div class="field">
+                <label for="foyer">Nombre de personnes qui occuperont le logement <span class="req">*</span></label>
+                <input type="number" id="foyer" name="nb_occupants" min="1" required>
+              </div>
+              <div class="field">
+                <label>Animaux domestiques</label>
+                <div class="radio-row">
+                  <label class="radio-pill"><input type="radio" name="animaux" value="Non" checked> Non</label>
+                  <label class="radio-pill"><input type="radio" name="animaux" value="Oui"> Oui</label>
+                </div>
+              </div>
+              <div class="field field-full">
+                <label for="animaux_detail">Si oui, précisez (espèce, nombre)</label>
+                <input type="text" id="animaux_detail" name="animaux_detail">
+              </div>
+            </div>
+          </article>
+
+          <!-- ARTICLE II — LOGEMENT ACTUEL -->
+          <article class="doss-article">
+            <div class="doss-article-head">
+              <span class="doss-article-num">Article II</span>
+              <h3 class="doss-article-title">Situation de logement actuelle</h3>
+            </div>
+
+            <div class="field-grid">
+              <div class="field field-full">
+                <label>Statut actuel <span class="req">*</span></label>
+                <div class="radio-row">
+                  <label class="radio-pill"><input type="radio" name="statut_logement" value="Locataire" required> Locataire</label>
+                  <label class="radio-pill"><input type="radio" name="statut_logement" value="Propriétaire"> Propriétaire</label>
+                  <label class="radio-pill"><input type="radio" name="statut_logement" value="Hébergé à titre gratuit"> Hébergé à titre gratuit</label>
+                  <label class="radio-pill"><input type="radio" name="statut_logement" value="Autre"> Autre</label>
+                </div>
+              </div>
+              <div class="field field-full">
+                <label for="adresse_actuelle">Adresse actuelle <span class="req">*</span></label>
+                <input type="text" id="adresse_actuelle" name="adresse_actuelle" required>
+              </div>
+              <div class="field">
+                <label for="depuis_quand">Depuis quand à cette adresse <span class="req">*</span></label>
+                <input type="text" id="depuis_quand" name="anciennete_logement" placeholder="ex. depuis 2022" required>
+              </div>
+              <div class="field">
+                <label for="loyer_actuel">Loyer actuel, charges comprises (si locataire)</label>
+                <input type="text" id="loyer_actuel" name="loyer_actuel" placeholder="€ / mois">
+              </div>
+            </div>
+          </article>
+
+          <!-- ARTICLE III — SITUATION PROFESSIONNELLE -->
+          <article class="doss-article">
+            <div class="doss-article-head">
+              <span class="doss-article-num">Article III</span>
+              <h3 class="doss-article-title">Situation professionnelle</h3>
+            </div>
+
+            <div class="field-grid">
+              <div class="field field-full">
+                <label>Statut <span class="req">*</span></label>
+                <div class="radio-row">
+                  <label class="radio-pill"><input type="radio" name="statut_pro" value="CDI" required> CDI</label>
+                  <label class="radio-pill"><input type="radio" name="statut_pro" value="CDD"> CDD</label>
+                  <label class="radio-pill"><input type="radio" name="statut_pro" value="Indépendant / profession libérale"> Indépendant</label>
+                  <label class="radio-pill"><input type="radio" name="statut_pro" value="Étudiant"> Étudiant</label>
+                  <label class="radio-pill"><input type="radio" name="statut_pro" value="Retraité"> Retraité</label>
+                  <label class="radio-pill"><input type="radio" name="statut_pro" value="Autre"> Autre</label>
+                </div>
+              </div>
+              <div class="field">
+                <label for="employeur">Employeur / établissement</label>
+                <input type="text" id="employeur" name="employeur">
+              </div>
+              <div class="field">
+                <label for="poste">Poste occupé</label>
+                <input type="text" id="poste" name="poste">
+              </div>
+              <div class="field">
+                <label for="anciennete_pro">Ancienneté dans le poste</label>
+                <input type="text" id="anciennete_pro" name="anciennete_pro" placeholder="ex. 3 ans">
+              </div>
+              <div class="field">
+                <label>Période d'essai en cours</label>
+                <div class="radio-row">
+                  <label class="radio-pill"><input type="radio" name="periode_essai" value="Non" checked> Non</label>
+                  <label class="radio-pill"><input type="radio" name="periode_essai" value="Oui"> Oui</label>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- ARTICLE IV — RESSOURCES -->
+          <article class="doss-article">
+            <div class="doss-article-head">
+              <span class="doss-article-num">Article IV</span>
+              <h3 class="doss-article-title">Ressources</h3>
+            </div>
+            <p class="doss-article-hint">Revenus nets mensuels de l'ensemble du foyer qui occupera le logement.</p>
+
+            <div class="field-grid">
+              <div class="field">
+                <label for="revenu_net">Revenu net mensuel du foyer <span class="req">*</span></label>
+                <input type="text" id="revenu_net" name="revenu_net_mensuel" placeholder="€ / mois" required>
+              </div>
+              <div class="field">
+                <label for="autres_revenus">Autres ressources (aides, pension, rente...)</label>
+                <input type="text" id="autres_revenus" name="autres_ressources" placeholder="Nature et montant">
+              </div>
+            </div>
+          </article>
+
+          <!-- ARTICLE V — GARANT -->
+          <article class="doss-article">
+            <div class="doss-article-head">
+              <span class="doss-article-num">Article V</span>
+              <h3 class="doss-article-title">Garant</h3>
+            </div>
+
+            <div class="field-grid">
+              <div class="field field-full">
+                <label>Votre dossier comprend-il un garant ? <span class="req">*</span></label>
+                <div class="radio-row">
+                  <label class="radio-pill"><input type="radio" name="a_garant" value="Non" id="garant-non" required> Non</label>
+                  <label class="radio-pill"><input type="radio" name="a_garant" value="Oui — garant physique" id="garant-oui"> Oui — garant physique</label>
+                  <label class="radio-pill"><input type="radio" name="a_garant" value="Oui — garantie Visale"> Garantie Visale</label>
+                </div>
+              </div>
+            </div>
+
+            <div class="conditional-block" id="garant-details">
+              <div class="field-grid">
+                <div class="field">
+                  <label for="garant_nom">Nom du garant</label>
+                  <input type="text" id="garant_nom" name="garant_nom">
+                </div>
+                <div class="field">
+                  <label for="garant_lien">Lien avec le candidat</label>
+                  <input type="text" id="garant_lien" name="garant_lien" placeholder="ex. parent, ami">
+                </div>
+                <div class="field">
+                  <label for="garant_statut">Statut professionnel du garant</label>
+                  <input type="text" id="garant_statut" name="garant_statut_pro">
+                </div>
+                <div class="field">
+                  <label for="garant_revenu">Revenu net mensuel du garant</label>
+                  <input type="text" id="garant_revenu" name="garant_revenu" placeholder="€ / mois">
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- ARTICLE VI — PROJET LOCATIF -->
+          <article class="doss-article">
+            <div class="doss-article-head">
+              <span class="doss-article-num">Article VI</span>
+              <h3 class="doss-article-title">Projet locatif</h3>
+            </div>
+
+            <div class="field-grid">
+              <div class="field">
+                <label for="date_entree">Date d'entrée souhaitée <span class="req">*</span></label>
+                <input type="date" id="date_entree" name="date_entree_souhaitee" required>
+              </div>
+              <div class="field">
+                <label for="duree_envisagee">Durée d'occupation envisagée</label>
+                <input type="text" id="duree_envisagee" name="duree_envisagee" placeholder="ex. long terme, 2-3 ans...">
+              </div>
+              <div class="field field-full cols-1">
+                <label for="motivation">Pourquoi ce logement vous intéresse-t-il ? <span class="req">*</span></label>
+                <textarea id="motivation" name="motivation" required></textarea>
+              </div>
+              <div class="field field-full cols-1">
+                <label for="projet_vie">Comment décririez-vous votre projet pour les prochaines années ?</label>
+                <textarea id="projet_vie" name="projet_de_vie"></textarea>
+              </div>
+              <div class="field field-full cols-1">
+                <label for="precisions">Un élément de votre dossier que vous souhaitez nous préciser ?</label>
+                <textarea id="precisions" name="precisions_candidat"></textarea>
+              </div>
+            </div>
+          </article>
+
+          <!-- ARTICLE VII — PIÈCES JUSTIFICATIVES -->
+          <article class="doss-article">
+            <div class="doss-article-head">
+              <span class="doss-article-num">Article VII</span>
+              <h3 class="doss-article-title">Pièces justificatives</h3>
+            </div>
+            <p class="doss-article-hint">
+              Conformément au décret n°2015-1437, nous ne vous demandons qu'un document par catégorie
+              ci-dessous. Aucune autre pièce ne vous sera réclamée (relevé bancaire complet, extrait de
+              casier judiciaire, photo d'identité et carte Vitale sont notamment interdits par la loi).
+              Si vos fichiers sont trop volumineux pour ce formulaire, vous pourrez nous les faire
+              parvenir par retour d'email.
+            </p>
+
+            <div class="field-grid cols-1">
+              <div class="file-drop">
+                <div>
+                  <span class="file-drop-label">Pièce d'identité</span>
+                  <span class="file-drop-sub">Carte nationale d'identité, passeport ou titre de séjour</span>
+                </div>
+                <input type="file" name="piece_identite" accept=".pdf,.jpg,.jpeg,.png">
+              </div>
+              <div class="file-drop">
+                <div>
+                  <span class="file-drop-label">Justificatif de domicile actuel</span>
+                  <span class="file-drop-sub">Quittance de loyer, attestation d'hébergement ou avis de taxe foncière</span>
+                </div>
+                <input type="file" name="justif_domicile" accept=".pdf,.jpg,.jpeg,.png">
+              </div>
+              <div class="file-drop">
+                <div>
+                  <span class="file-drop-label">Justificatif d'activité professionnelle</span>
+                  <span class="file-drop-sub">Contrat de travail ou attestation employeur</span>
+                </div>
+                <input type="file" name="justif_activite" accept=".pdf,.jpg,.jpeg,.png">
+              </div>
+              <div class="file-drop">
+                <div>
+                  <span class="file-drop-label">Justificatif de ressources</span>
+                  <span class="file-drop-sub">3 derniers bulletins de salaire ou dernier avis d'imposition</span>
+                </div>
+                <input type="file" name="justif_ressources" accept=".pdf,.jpg,.jpeg,.png">
+              </div>
+              <div class="file-drop">
+                <div>
+                  <span class="file-drop-label">Pièces du garant (le cas échéant)</span>
+                  <span class="file-drop-sub">Mêmes catégories que ci-dessus, regroupées si possible en un seul fichier</span>
+                </div>
+                <input type="file" name="justif_garant" accept=".pdf,.jpg,.jpeg,.png">
+              </div>
+            </div>
+          </article>
+
+          <!-- CONSENTEMENT & ENVOI -->
+          <div class="consent-block">
+            <label class="consent-line">
+              <input type="checkbox" name="consentement_exactitude" value="Oui" required>
+              J'atteste sur l'honneur l'exactitude des informations transmises dans ce formulaire.
+            </label>
+            <label class="consent-line">
+              <input type="checkbox" name="consentement_rgpd" value="Oui" required>
+              J'accepte que les informations et documents fournis soient utilisés par la SCI Hufalou
+              dans le cadre exclusif de l'étude de ma candidature à la location, et conservés uniquement
+              pendant la durée nécessaire à cette sélection. Conformément au RGPD, je peux demander l'accès,
+              la rectification ou la suppression de mes données en écrivant à hufalou.sci@gmail.com.
+            </label>
+          </div>
+
+          <div class="doss-submit-row">
+            <button type="submit" class="btn-primary">Envoyer ma candidature</button>
+            <span class="doss-submit-note">Vous recevrez une confirmation par email après envoi.</span>
+          </div>
+
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <div id="footer-inject"></div>
+
+  <script src="_shared.js"></script>
+  <script>
+    (function () {
+      'use strict';
+
+      // Affiche les champs du garant uniquement si un garant physique est déclaré
+      var garantOui = document.getElementById('garant-oui');
+      var garantNon = document.getElementById('garant-non');
+      var garantBlock = document.getElementById('garant-details');
+      var allGarantRadios = document.querySelectorAll('input[name="a_garant"]');
+
+      function toggleGarant() {
+        if (garantOui && garantOui.checked) {
+          garantBlock.classList.add('active');
+        } else {
+          garantBlock.classList.remove('active');
+        }
+      }
+      allGarantRadios.forEach(function (r) { r.addEventListener('change', toggleGarant); });
+
+      // Barre de progression : proportion de champs requis complétés
+      var form = document.getElementById('candidature-form');
+      var fill = document.getElementById('progressFill');
+      var pct = document.getElementById('progressPct');
+
+      function updateProgress() {
+        var required = Array.from(form.querySelectorAll('[required]'));
+        var groups = {};
+        required.forEach(function (el) {
+          var key = el.type === 'radio' ? el.name : (el.id || el.name);
+          groups[key] = groups[key] || [];
+          groups[key].push(el);
+        });
+        var keys = Object.keys(groups);
+        var done = keys.filter(function (key) {
+          var els = groups[key];
+          return els.some(function (el) {
+            if (el.type === 'radio' || el.type === 'checkbox') return el.checked;
+            return el.value && el.value.trim().length > 0;
+          });
+        }).length;
+        var percent = keys.length ? Math.round((done / keys.length) * 100) : 0;
+        fill.style.width = percent + '%';
+        pct.textContent = percent + '%';
+      }
+
+      form.addEventListener('input', updateProgress);
+      form.addEventListener('change', updateProgress);
+      updateProgress();
+    })();
+  </script>
+</body>
+</html>
