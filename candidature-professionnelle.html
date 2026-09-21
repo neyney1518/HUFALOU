@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dossier de candidature professionnelle — SCI Hufalou</title>
+<meta name="robots" content="noindex, nofollow">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="_shared.css">
+<link rel="stylesheet" href="candidature.css">
+</head>
+<body>
+
+  <div id="nav-inject"></div>
+
+  <main id="main-content">
+
+    <section class="section doss-intro">
+      <div class="max-w">
+        <div class="ledger-ref">Dossier de candidature</div>
+        <h2 class="section-title">Candidature <em>professionnelle</em></h2>
+        <p class="section-lead">
+          Merci de l'intérêt que vous portez à nos locaux. Afin d'étudier votre projet d'implantation avec
+          la même rigueur que nous appliquons à la gestion de notre patrimoine, nous vous remercions
+          de compléter ce dossier. Ce formulaire est exclusivement réservé aux entreprises, indépendants 
+          et professions libérales souhaitant établir un bail commercial ou professionnel.
+        </p>
+      </div>
+    </section>
+
+    <div class="doss-progress" aria-hidden="true">
+      <div class="doss-progress-inner">
+        <span class="doss-progress-label">Progression</span>
+        <span class="doss-progress-track"><span class="doss-progress-fill" id="progressFill"></span></span>
+        <span class="doss-progress-label" id="progressPct">0%</span>
+      </div>
+    </div>
+
+    <section class="section">
+      <div class="max-w">
+        <form id="candidature-form" action="https://formsubmit.co/hufalou.sci@gmail.com" method="POST" enctype="multipart/form-data">
+
+          <!-- Anti-spam & configuration FormSubmit -->
+          <input type="hidden" name="_subject" value="Nouvelle candidature professionnelle — SCI Hufalou">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_captcha" value="true">
+          <input type="hidden" name="_next" value="https://hufalou.vercel.app/merci.html">
+          <input type="hidden" name="_autoresponse" value="Bonjour, nous vous confirmons la bonne réception de votre dossier de candidature professionnelle pour les locaux de la SCI Hufalou. Nous l'étudions avec attention et reviendrons vers vous dans les meilleurs délais. Cordialement, SCI Hufalou">
+          <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+
+          <!-- ARTICLE PREMIER — IDENTITÉ DE L'ENTREPRISE -->
+          <article class="doss-article">
+            <div class="doss-article-head">
+              <span class="doss-article-num">Article premier</span>
+              <h3 class="doss-article-title">Identité de la structure</h3>
+            </div>
+
+            <div class="field-grid">
+              <div class="field field-full">
+                <label>Statut d'avancement <span class="req">*</span></label>
+                <div class="radio-row">
+                  <label class="radio-pill"><input type="radio" name="statut_avancement" value="Société existante" required> Société existante</label>
+                  <label class="radio-pill"><input type="radio" name="statut_avancement" value="Société en cours de création"> Société en cours de création</label>
+                </div>
+              </div>
+              <div class="field">
+                <label for="raison_sociale">Raison sociale / Nom commercial <span class="req">*</span></label>
+                <input type="text" id="raison_sociale" name="raison_sociale" required>
+              </div>
+              <div class="field">
+                <label for="forme_juridique">Forme juridique (ex: SASU, SARL, EI...) <span class="req">*</span></label>
+                <input type="text" id="forme_juridique" name="forme_juridique" required>
+              </div>
+              <div class="field">
+                <label for="siret">Numéro SIRET</label>
+                <input type="text" id="siret" name="siret" placeholder="Si existant">
+              </div>
+              <div class="field">
+                <label for="date_creation">Date de création de l'entreprise</label>
+                <input type="date" id="date_creation" name="date_creation">
+              </div>
+              <div class="field field-full">
+                <label for="siege_social">Adresse du siège social actuel <span class="req">*</span></label>
+                <input type="text" id="siege_social" name="adresse_siege" required>
+              </div>
+            </div>
+          </article>
+
+          <!-- ARTICLE II — REPRÉSENTANT LÉGAL -->
+          <article class="doss-article">
+            <div class="doss-article-head">
+              <span class="doss-article-num">Article II</span>
+              <h3 class="doss-article-title">Représentant légal</h3>
+            </div>
+
+            <div class="field-grid">
+              <div class="field">
+                <label for="nom_dirigeant">Nom du dirigeant <span class="req">*</span></label>
+                <input type="text" id="nom_dirigeant" name="nom_dirigeant" required>
+              </div>
+              <div class="field">
+                <label for="prenom_dirigeant">Prénom du dirigeant <span class="req">*</span></label>
+                <input type="text" id="prenom_dirigeant" name="prenom_dirigeant" required>
+              </div>
+              <div class="field">
+                <label for="tel_pro">Téléphone direct <span class="req">*</span></label>
+                <input type="tel" id="tel_pro" name="telephone_dirigeant" required>
+              </div>
+              <div class="field">
+                <label for="email_pro">Email professionnel <span class="req">*</span></label>
+                <input type="email" id="email_pro" name="email_dirigeant" required>
+              </div>
+            </div>
+          </article>
+
+          <!-- ARTICLE III — PROJET D'IMPLANTATION -->
+          <article class="doss-article">
+            <div class="doss-article-head">
+              <span class="doss-article-num">Article III</span>
+              <h3 class="doss-article-title">Projet et Activité</h3>
+            </div>
+
+            <div class="field-grid">
+              <div class="field field-full">
+                <label>Type de bail souhaité <span class="req">*</span></label>
+                <div class="radio-row">
+                  <label class="radio-pill"><input type="radio" name="type_bail" value="Bail Commercial (3/6/9)" required> Bail Commercial (3/6/9)</label>
+                  <label class="radio-pill"><input type="radio" name="type_bail" value="Bail Professionnel"> Bail Professionnel</label>
+                  <label class="radio-pill"><input type="radio" name="type_bail" value="Bail Précaire / Dérogatoire"> Bail Dérogatoire (courte durée)</label>
+                </div>
+              </div>
+              <div class="field">
+                <label for="date_entree_pro">Date d'entrée souhaitée <span class="req">*</span></label>
+                <input type="date" id="date_entree_pro" name="date_entree_souhaitee" required>
+              </div>
+              <div class="field">
+                <label for="effectif">Effectif prévu sur site <span class="req">*</span></label>
+                <input type="number" id="effectif" name="effectif_sur_site" min="1" required>
+              </div>
+              <div class="field field-full cols-1">
+                <label for="description_activite">Description détaillée de votre activité <span class="req">*</span></label>
+                <textarea id="description_activite" name="description_activite" placeholder="Nature des biens/services, profil de la clientèle visée..." required></textarea>
+              </div>
+              <div class="field field-full cols-1">
+                <label for="besoins_locaux">Besoins spécifiques et attentes vis-à-vis du local</label>
+                <textarea id="besoins_locaux" name="besoins_specifiques" placeholder="Flux de passage nécessaire, contraintes techniques, travaux d'aménagement envisagés..."></textarea>
+              </div>
+            </div>
+          </article>
+
+          <!-- ARTICLE IV — DONNÉES FINANCIÈRES & GARANTIES -->
+          <article class="doss-article">
+            <div class="doss-article-head">
+              <span class="doss-article-num">Article IV</span>
+              <h3 class="doss-article-title">Données financières & Garanties</h3>
+            </div>
+            <p class="doss-article-hint">Ces éléments nous permettent de mesurer la solidité financière de votre projet.</p>
+
+            <div class="field-grid">
+              <div class="field">
+                <label for="ca_annuel">Chiffre d'affaires (dernier exercice ou prévisionnel) <span class="req">*</span></label>
+                <input type="text" id="ca_annuel" name="chiffre_affaires" placeholder="€" required>
+              </div>
+              <div class="field">
+                <label for="resultat_net">Résultat net (dernier exercice)</label>
+                <input type="text" id="resultat_net" name="resultat_net" placeholder="€">
+              </div>
+              <div class="field field-full">
+                <label>Garantie envisagée <span class="req">*</span></label>
+                <div class="radio-row">
+                  <label class="radio-pill"><input type="radio" name="type_garantie" value="Caution personnelle du dirigeant" required> Caution personnelle</label>
+                  <label class="radio-pill"><input type="radio" name="type_garantie" value="Garantie bancaire à première demande (GAPD)"> Garantie bancaire (GAPD)</label>
+                  <label class="radio-pill"><input type="radio" name="type_garantie" value="Dépôt de garantie majoré"> Dépôt de garantie majoré</label>
+                  <label class="radio-pill"><input type="radio" name="type_garantie" value="Autre"> Autre</label>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- ARTICLE V — PIÈCES JUSTIFICATIVES -->
+          <article class="doss-article">
+            <div class="doss-article-head">
+              <span class="doss-article-num">Article V</span>
+              <h3 class="doss-article-title">Pièces justificatives</h3>
+            </div>
+            <p class="doss-article-hint">
+              Veuillez nous transmettre les documents relatifs à votre structure. En cas de création d'entreprise, merci de fournir 
+              un projet de statuts et un business plan. Si les fichiers dépassent la limite de taille, vous pourrez nous les 
+              transmettre par retour d'email.
+            </p>
+
+            <div class="field-grid cols-1">
+              <div class="file-drop">
+                <div>
+                  <span class="file-drop-label">Extrait Kbis</span>
+                  <span class="file-drop-sub">Datant de moins de 3 mois</span>
+                </div>
+                <input type="file" name="piece_kbis" accept=".pdf,.jpg,.jpeg,.png">
+              </div>
+              <div class="file-drop">
+                <div>
+                  <span class="file-drop-label">Statuts de la société</span>
+                  <span class="file-drop-sub">Complets, à jour et signés (ou projet de statuts si création)</span>
+                </div>
+                <input type="file" name="piece_statuts" accept=".pdf,.jpg,.jpeg,.png">
+              </div>
+              <div class="file-drop">
+                <div>
+                  <span class="file-drop-label">Pièce d'identité du dirigeant</span>
+                  <span class="file-drop-sub">Carte nationale d'identité ou passeport en cours de validité</span>
+                </div>
+                <input type="file" name="piece_identite_dirigeant" accept=".pdf,.jpg,.jpeg,.png">
+              </div>
+              <div class="file-drop">
+                <div>
+                  <span class="file-drop-label">Éléments comptables</span>
+                  <span class="file-drop-sub">2 dernières liasses fiscales / bilans ou Business Plan (si création)</span>
+                </div>
+                <input type="file" name="piece_comptable" accept=".pdf,.zip">
+              </div>
+              <div class="file-drop">
+                <div>
+                  <span class="file-drop-label">Relevé d'Identité Bancaire (RIB)</span>
+                  <span class="file-drop-sub">Au nom de la société</span>
+                </div>
+                <input type="file" name="piece_rib" accept=".pdf,.jpg,.jpeg,.png">
+              </div>
+            </div>
+          </article>
+
+          <!-- CONSENTEMENT & ENVOI -->
+          <div class="consent-block">
+            <label class="consent-line">
+              <input type="checkbox" name="consentement_exactitude" value="Oui" required>
+              J'atteste sur l'honneur l'exactitude des informations transmises dans ce dossier de candidature professionnelle.
+            </label>
+            <label class="consent-line">
+              <input type="checkbox" name="consentement_rgpd" value="Oui" required>
+              J'accepte que les informations et documents fournis soient utilisés par la SCI Hufalou
+              dans le cadre exclusif de l'étude de ce projet d'implantation, et conservés uniquement
+              pendant la durée nécessaire à cette sélection. Conformément au RGPD, je peux demander l'accès,
+              la rectification ou la suppression des données en écrivant à hufalou.sci@gmail.com.
+            </label>
+          </div>
+
+          <div class="doss-submit-row">
+            <button type="submit" class="btn-primary">Envoyer le dossier</button>
+            <span class="doss-submit-note">Vous recevrez une confirmation par email après envoi.</span>
+          </div>
+
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <div id="footer-inject"></div>
+
+  <script src="_shared.js"></script>
+  <script>
+    (function () {
+      'use strict';
+
+      // Barre de progression : proportion de champs requis complétés
+      var form = document.getElementById('candidature-form');
+      var fill = document.getElementById('progressFill');
+      var pct = document.getElementById('progressPct');
+
+      function updateProgress() {
+        var required = Array.from(form.querySelectorAll('[required]'));
+        var groups = {};
+        required.forEach(function (el) {
+          var key = el.type === 'radio' ? el.name : (el.id || el.name);
+          groups[key] = groups[key] || [];
+          groups[key].push(el);
+        });
+        var keys = Object.keys(groups);
+        var done = keys.filter(function (key) {
+          var els = groups[key];
+          return els.some(function (el) {
+            if (el.type === 'radio' || el.type === 'checkbox') return el.checked;
+            return el.value && el.value.trim().length > 0;
+          });
+        }).length;
+        var percent = keys.length ? Math.round((done / keys.length) * 100) : 0;
+        fill.style.width = percent + '%';
+        pct.textContent = percent + '%';
+      }
+
+      form.addEventListener('input', updateProgress);
+      form.addEventListener('change', updateProgress);
+      updateProgress();
+    })();
+  </script>
+</body>
+</html>
