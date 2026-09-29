@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Dossier de candidature — SCI Hufalou</title>
+<title>Dossier de candidature — SC Hufalou</title>
 <meta name="robots" content="noindex, nofollow">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
@@ -39,14 +39,14 @@
 
     <section class="section">
       <div class="max-w">
-        <form id="candidature-form" action="https://formsubmit.co/hufalou.sci@gmail.com" method="POST" enctype="multipart/form-data">
+        <form id="candidature-form" action="https://formsubmit.co/hufalou.sc@gmail.com" method="POST" enctype="multipart/form-data">
 
           <!-- Anti-spam & configuration FormSubmit -->
-          <input type="hidden" name="_subject" value="Nouvelle candidature de location — SCI Hufalou">
+          <input type="hidden" name="_subject" value="Nouvelle candidature de location — SC Hufalou">
           <input type="hidden" name="_template" value="table">
           <input type="hidden" name="_captcha" value="true">
           <input type="hidden" name="_next" value="https://hufalou.vercel.app/merci.html">
-          <input type="hidden" name="_autoresponse" value="Bonjour, nous vous confirmons la bonne réception de votre dossier de candidature pour le logement de la SCI Hufalou. Nous l'étudions avec attention et reviendrons vers vous personnellement dans les meilleurs délais. Cordialement, SCI Hufalou">
+          <input type="hidden" name="_autoresponse" value="Bonjour, nous vous confirmons la bonne réception de votre dossier de candidature pour le logement de la SC Hufalou. Nous l'étudions avec attention et reviendrons vers vous personnellement dans les meilleurs délais. Cordialement, SC Hufalou">
           <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
 
           <!-- ARTICLE PREMIER — IDENTITÉ -->
@@ -255,6 +255,14 @@
                 <label for="motivation">Pourquoi ce logement vous intéresse-t-il ? <span class="req">*</span></label>
                 <textarea id="motivation" name="motivation" required></textarea>
               </div>
+              <div class="field field-full cols-1">
+                <label for="projet_vie">Comment décririez-vous votre projet pour les prochaines années ?</label>
+                <textarea id="projet_vie" name="projet_de_vie"></textarea>
+              </div>
+              <div class="field field-full cols-1">
+                <label for="precisions">Un élément de votre dossier que vous souhaitez nous préciser ?</label>
+                <textarea id="precisions" name="precisions_candidat"></textarea>
+              </div>
             </div>
           </article>
 
@@ -319,15 +327,16 @@
             </label>
             <label class="consent-line">
               <input type="checkbox" name="consentement_rgpd" value="Oui" required>
-              J'accepte que les informations et documents fournis soient utilisés par la SCI Hufalou
+              J'accepte que les informations et documents fournis soient utilisés par la SC Hufalou
               dans le cadre exclusif de l'étude de ma candidature à la location, et conservés uniquement
               pendant la durée nécessaire à cette sélection. Conformément au RGPD, je peux demander l'accès,
-              la rectification ou la suppression de mes données en écrivant à hufalou.sci@gmail.com.
+              la rectification ou la suppression de mes données en écrivant à hufalou.sc@gmail.com.
             </label>
           </div>
 
           <div class="doss-submit-row">
             <button type="submit" class="btn-primary">Envoyer ma candidature</button>
+            <span class="doss-submit-note">Vous recevrez une confirmation par email après envoi.</span>
           </div>
 
         </form>
