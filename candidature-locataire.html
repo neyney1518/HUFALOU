@@ -157,21 +157,12 @@
                 <label for="employeur">Employeur / établissement</label>
                 <input type="text" id="employeur" name="employeur">
               </div>
-              <div class="field">
-                <label for="poste">Poste occupé</label>
-                <input type="text" id="poste" name="poste">
-              </div>
+              
               <div class="field">
                 <label for="anciennete_pro">Ancienneté dans le poste</label>
                 <input type="text" id="anciennete_pro" name="anciennete_pro" placeholder="ex. 3 ans">
               </div>
-              <div class="field">
-                <label>Période d'essai en cours</label>
-                <div class="radio-row">
-                  <label class="radio-pill"><input type="radio" name="periode_essai" value="Non" checked> Non</label>
-                  <label class="radio-pill"><input type="radio" name="periode_essai" value="Oui"> Oui</label>
-                </div>
-              </div>
+              
             </div>
           </article>
 
@@ -255,14 +246,7 @@
                 <label for="motivation">Pourquoi ce logement vous intéresse-t-il ? <span class="req">*</span></label>
                 <textarea id="motivation" name="motivation" required></textarea>
               </div>
-              <div class="field field-full cols-1">
-                <label for="projet_vie">Comment décririez-vous votre projet pour les prochaines années ?</label>
-                <textarea id="projet_vie" name="projet_de_vie"></textarea>
-              </div>
-              <div class="field field-full cols-1">
-                <label for="precisions">Un élément de votre dossier que vous souhaitez nous préciser ?</label>
-                <textarea id="precisions" name="precisions_candidat"></textarea>
-              </div>
+              
             </div>
           </article>
 
@@ -273,11 +257,7 @@
               <h3 class="doss-article-title">Pièces justificatives</h3>
             </div>
             <p class="doss-article-hint">
-              Conformément au décret n°2015-1437, nous ne vous demandons qu'un document par catégorie
-              ci-dessous. Aucune autre pièce ne vous sera réclamée (relevé bancaire complet, extrait de
-              casier judiciaire, photo d'identité et carte Vitale sont notamment interdits par la loi).
-              Si vos fichiers sont trop volumineux pour ce formulaire, vous pourrez nous les faire
-              parvenir par retour d'email.
+              Si vos fichiers sont trop volumineux pour ce formulaire, vous pourrez nous les faire parvenir par retour d'email.
             </p>
 
             <div class="field-grid cols-1">
@@ -288,13 +268,7 @@
                 </div>
                 <input type="file" name="piece_identite" accept=".pdf,.jpg,.jpeg,.png">
               </div>
-              <div class="file-drop">
-                <div>
-                  <span class="file-drop-label">Justificatif de domicile actuel</span>
-                  <span class="file-drop-sub">Quittance de loyer, attestation d'hébergement ou avis de taxe foncière</span>
-                </div>
-                <input type="file" name="justif_domicile" accept=".pdf,.jpg,.jpeg,.png">
-              </div>
+              
               <div class="file-drop">
                 <div>
                   <span class="file-drop-label">Justificatif d'activité professionnelle</span>
@@ -305,17 +279,11 @@
               <div class="file-drop">
                 <div>
                   <span class="file-drop-label">Justificatif de ressources</span>
-                  <span class="file-drop-sub">3 derniers bulletins de salaire ou dernier avis d'imposition</span>
+                  <span class="file-drop-sub">Bulletins de salaire ou dernier avis d'imposition</span>
                 </div>
                 <input type="file" name="justif_ressources" accept=".pdf,.jpg,.jpeg,.png">
               </div>
-              <div class="file-drop">
-                <div>
-                  <span class="file-drop-label">Pièces du garant (le cas échéant)</span>
-                  <span class="file-drop-sub">Mêmes catégories que ci-dessus, regroupées si possible en un seul fichier</span>
-                </div>
-                <input type="file" name="justif_garant" accept=".pdf,.jpg,.jpeg,.png">
-              </div>
+              
             </div>
           </article>
 
