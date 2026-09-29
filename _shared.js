@@ -1,5 +1,5 @@
 /**
- * SCI HUFALOU — _shared.js
+ * SC HUFALOU — _shared.js
  * Injection d'un header et footer 100% identiques sur toutes les pages.
  */
 
@@ -10,7 +10,7 @@
   const navHTML = `
     <header id="site-header">
       <div class="header-inner">
-        <a href="index.html" class="brand" aria-label="SCI Hufalou — Accueil">
+        <a href="index.html" class="brand" aria-label="SC Hufalou — Accueil">
           <span class="brand-mark" aria-hidden="true">
             <img src="images/Logo_HUFALOU_transparent.png" alt="Logo">
           </span>
@@ -40,7 +40,7 @@
     <footer id="site-footer">
       <div class="footer-inner-simple">
         <div class="footer-brand">
-          <span class="footer-word">SCI HUFALOU</span>
+          <span class="footer-word">SC HUFALOU</span>
           <p class="footer-baseline">Investir durablement. <br>Valoriser le patrimoine. <br>Construire l'avenir.</p>
         </div>
         <nav class="footer-legal-nav" aria-label="Mentions légales">
@@ -49,7 +49,7 @@
         </nav>
       </div>
       <div class="footer-bottom">
-        <span>© <span id="year"></span> SCI HUFALOU. Tous droits réservés.</span>
+        <span>© <span id="year"></span> SC HUFALOU. Tous droits réservés.</span>
       </div>
     </footer>
   `;
